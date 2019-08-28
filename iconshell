@@ -1,0 +1,27 @@
+#!/bin/sh
+
+rm -rf Destrepo
+git clone https://username:password@github.com/arigalamadan/Destrepo.git
+cd Destrepo/
+for FILE in `find . -type f -name '*tar.gz'`
+do
+if [[ ! -v "$(ls *.tar.gz))" ]]; then
+echo "tar files" ${FILE}
+fi
+done
+for file in `find . -type f -name '*.zip'`
+do
+if [[ ! -v "$(ls *.zip))" ]]; then
+echo "zip files" ${file}
+fi
+done
+unzip Desktop.zip
+
+
+# scp  /home/arigalam/madan/Destrepo/ arigalam@eu-middleware-sb2.iconcr.com:/home/arigalam/ 
+
+# sshpass -p 'arigalam' "scp /home/arigalam/Deskrepo/*.txt arigalam@eu-middleware-sb2:/home/arigalam/"
+
+# sshpass -p 'arigalam' ssh arigalam@eu-middleware-sb2.iconcr.com 'df -h' 
+
+# ssh arigalam@eu-middleware-sb1  "scp -r /home/arigalam/Deskrepo/*.txt  arigalam@eu-middleware-sb2:/home/arigalam/"
